@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Sarabun', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  html, body {
+    font-family: var(--font-sans);
+    color: #111827;
+    background-color: #F7F9F8;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Official Google Sign-In Button Styling */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #1f2937;
+  cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  height: 44px;
+  letter-spacing: 0.01em;
+  outline: none;
+  overflow: hidden;
+  padding: 0 18px;
+  position: relative;
+  text-align: center;
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  vertical-align: middle;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gsi-material-button:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.gsi-material-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.gsi-material-button-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gsi-material-button-icon {
+  height: 20px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1cec7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8fa69b;
+}
+
+/* Formal Government A4 Print & PDF Export Styles */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Sarabun', sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-block {
+    display: block !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  th, td {
+    border: 1px solid #cbd5e1 !important;
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+}
